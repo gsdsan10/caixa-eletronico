@@ -1,0 +1,45 @@
+class CaixaEletronico {
+  saldo: number
+  constructor(saldoInicial = 0) {
+    this.saldo = saldoInicial;
+  }
+
+  // Método para depositar dinheiro na conta
+  depositar(valor:number) {
+    if (valor > 0) {
+      this.saldo += valor;
+      console.log(`Depósito de R$${valor.toFixed(2)} realizado com sucesso.`);
+    } else {
+      console.log('O valor do depósito deve ser positivo.');
+    }
+  }
+
+  // Método para sacar dinheiro da conta
+  sacar(valor:number) {
+    if (valor > 0) {
+      if (valor <= this.saldo) {
+        this.saldo -= valor;
+        console.log(`Saque de R$${valor.toFixed(2)} realizado com sucesso.`);
+      } else {
+        console.log('Saldo insuficiente.');
+      }
+    } else {
+      console.log('O valor do saque deve ser positivo.');
+    }
+  }
+
+  // Método para verificar o saldo atual
+  verificarSaldo() {
+    console.log(`Saldo atual: R$${this.saldo.toFixed(2)}`);
+  }
+}
+
+// Exemplo de uso
+const caixa = new CaixaEletronico(1000); // Inicializa o caixa com R$1000
+
+caixa.verificarSaldo(); // Exibe o saldo atual
+
+caixa.depositar(500); // Depósito de R$500
+caixa.sacar(200); // Saque de R$200
+
+caixa.verificarSaldo(); // Exibe o saldo atualizado
