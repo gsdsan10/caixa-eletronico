@@ -1,0 +1,104 @@
+abstract class Pessoas {
+public nome:string
+public cpf: string
+public idade:number
+public email:string
+public telefone:string[2]
+public  cpf_cnpj:string
+private lougradouro:lougradouro [] = [] 
+
+  public getNome():String {
+      return this.nome
+      }
+  
+  public setNome(nome:string):void{
+    this.nome=nome
+  }
+ 
+   public setCPF(cpf:string):void{
+    this.cpf=cpf
+
+   }
+   public getCPF():string{
+  return this.cpf
+   }
+   
+ public getIdade():number{
+  return this.idade
+ }
+ public getEmail():string{
+   return this.email
+
+ }
+ public getTelefone():string{
+    return this.telefone
+ }
+ 
+ public setTelefone(telefone:string):void{
+     this.telefone=telefone
+ }
+
+
+ public setEmail(email:string):void{
+    
+    this.email=email
+
+ }
+
+
+ public setIdade(idade:number):void{
+     this.idade=idade
+
+ }
+
+
+abstract setCpfCnpf(documento:string):void
+   
+ constructor (nome:string,cpf:string,idade:number,email:string,telefone:string[2],cpf_cnpj:string,logradouro:lougradouro ){
+    this.nome= nome
+    this.cpf= cpf
+    this.idade= idade
+    this.email= email
+    this.telefone= telefone
+    this.cpf_cnpj= cpf_cnpj
+    this.lougradouro[]=logradouro
+
+    }
+ }
+    class lougradouro {
+ 
+rua:string
+numero:string
+cidade:string 
+estado:string
+enderecoDeEntrega:boolean
+
+public getLougradouro():void{
+ 
+}
+public setRua(rua:string):void{
+
+}
+public setNumero(numero:string):void{
+
+}
+public setCidade(cidade:string):void{
+
+}
+public setEstado(estado:string):void{
+
+}
+
+
+constructor( rua:string, numero:string,cidade:string,estado:string,enderecoDeEntrega :boolean ){
+this.rua=rua 
+this.numero=numero
+this.cidade=cidade
+this.estado=estado
+this.enderecoDeEntrega=Boolean
+
+}
+
+    
+ }
+ 
